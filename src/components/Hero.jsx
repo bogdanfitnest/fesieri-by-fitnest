@@ -40,7 +40,7 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative flex flex-col justify-end w-full h-[100dvh] overflow-hidden bg-obsidian"
+      className="relative flex flex-col w-full min-h-[100dvh] overflow-hidden bg-obsidian"
     >
       {/* Background Image Wrapper */}
       <div className="absolute inset-0 z-0 w-full h-[120%] -top-[10%] hero-bg">
@@ -54,7 +54,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/70 to-transparent" />
       </div>
 
-      <div className="relative z-10 w-full px-6 pb-24 md:pb-32 pt-32 max-w-7xl mx-auto flex flex-col items-center">
+      <div className="relative z-10 w-full px-6 pb-24 md:pb-32 pt-44 md:pt-32 max-w-7xl mx-auto flex flex-col items-center">
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center w-full">
 
