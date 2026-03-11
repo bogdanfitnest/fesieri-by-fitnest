@@ -58,11 +58,11 @@ export default function AppShowcase() {
         <div className="relative z-10 w-full h-full grid grid-rows-[auto_1fr_auto] py-4 md:py-16 text-center overflow-hidden">
 
           {/* 1. Header Area */}
-          <div className="px-6 flex flex-col items-center flex-shrink-0 z-30 pt-4 md:pt-0">
+          <div className="px-6 flex flex-col items-center flex-shrink-0 z-40 pt-4 md:pt-0">
             <h2 className="text-4xl md:text-6xl lg:text-7xl font-sans font-black italic tracking-tighter mb-1 leading-tight uppercase">
               Aplicația <span className="text-champagne drop-shadow-sm">Fitnest.</span>
             </h2>
-            <p className="text-base md:text-3xl text-slate-500 font-drama italic tracking-tight">
+            <p className="text-sm md:text-3xl text-slate-500 font-drama italic tracking-tight">
               14+ ani de experiență într-un singur loc.
             </p>
           </div>
@@ -111,6 +111,7 @@ export default function AppShowcase() {
                             loop
                             muted
                             playsInline
+                            loading="lazy"
                             poster={`https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=600&auto=format&fit=crop`}
                           />
                           <div className="absolute inset-0 z-20 pointer-events-none shadow-[inset_0_0_40px_rgba(0,0,0,0.3)]" />
@@ -125,10 +126,10 @@ export default function AppShowcase() {
           </div>
 
           {/* 3. Footer Area (Info + Controls) */}
-          <div className="px-5 flex flex-col items-center flex-shrink-0 z-20 pb-2 md:pb-0">
+          <div className="px-5 flex flex-col items-center flex-shrink-0 z-40 pb-4 md:pb-8">
 
             {/* Dynamic Feature Meta Container (Safe height) */}
-            <div className="w-full max-w-4xl relative h-[90px] md:h-[130px] flex items-center justify-center mb-4 md:mb-6 mt-4 md:mt-0">
+            <div className="w-full max-w-4xl relative h-[90px] md:h-[130px] flex items-center justify-center mb-6 md:mb-8 mt-10 md:mt-12 z-40">
               {features.map((feature, idx) => (
                 <div
                   key={feature.id}
@@ -138,7 +139,7 @@ export default function AppShowcase() {
                   )}
                 >
                   <h3 className="text-xl md:text-5xl font-black italic font-sans mb-1 text-obsidian tracking-tighter uppercase leading-none">{feature.title}</h3>
-                  <p className="text-xs md:text-lg lg:text-xl text-slate-500 font-medium leading-tight max-w-2xl mx-auto px-4 line-clamp-3 md:line-clamp-none">
+                  <p className="text-[10px] md:text-lg lg:text-xl text-slate-500 font-medium leading-tight max-w-2xl mx-auto px-4 line-clamp-3 md:line-clamp-none">
                     {feature.desc}
                   </p>
                 </div>

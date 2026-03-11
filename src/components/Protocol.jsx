@@ -20,7 +20,7 @@ export default function Protocol() {
             trigger: card,
             start: 'top top',
             end: 'bottom top',
-            scrub: true,
+            scrub: 1,
             animation: gsap.to(card, {
                   scale: 0.95, // Softer scale down
                   opacity: 0.8, // Keeps text readable
@@ -122,7 +122,7 @@ export default function Protocol() {
           className={cn(
             "w-full h-[100dvh] flex items-center justify-center p-6 origin-top sticky top-0 bg-[#0d0d12] pt-28",
           )}
-          style={{ zIndex: index }}
+          style={{ zIndex: 10 + index }}
         >
           <div className="w-full max-w-7xl h-full max-h-[700px] flex flex-col md:flex-row bg-[#15151A] rounded-[3rem] border border-white/10 overflow-hidden shadow-2xl relative">
             

@@ -29,7 +29,7 @@ export default function Hero() {
           trigger: containerRef.current,
           start: 'top top',
           end: 'bottom top',
-          scrub: true,
+          scrub: 1,
         }
       });
     }, containerRef);
@@ -45,7 +45,7 @@ export default function Hero() {
       {/* Background Image Wrapper */}
       <div className="absolute inset-0 z-0 w-full h-[120%] -top-[10%] hero-bg">
         <img
-          // Luxury gym/dark marble mood image
+          loading="lazy"
           src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=80&w=2875&auto=format&fit=crop"
           alt="Dark Luxury Training Facility"
           className="object-cover w-full h-full opacity-60 mix-blend-luminosity"

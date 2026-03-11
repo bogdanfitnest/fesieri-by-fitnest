@@ -92,7 +92,7 @@ export default function Pricing() {
   ];
 
   return (
-    <section id="programe" className="relative w-full py-32 bg-ivory text-obsidian px-6 overflow-hidden z-20">
+    <section id="programe" className="relative w-full py-32 bg-ivory text-obsidian px-6 overflow-hidden z-50">
       <div className="max-w-7xl mx-auto">
         
         {/* Header Section with Timer */}
@@ -129,7 +129,7 @@ export default function Pricing() {
               )}
             >
               Anual
-              <span className="absolute -top-2 -right-4 bg-rose-600 text-white text-[8px] py-0.5 px-1.5 rounded-full font-black animate-bounce">
+              <span className="absolute -top-1 -right-2 bg-rose-600 text-white text-[8px] py-0.5 px-1.5 rounded-full font-black animate-bounce shadow-lg">
                 -40%
               </span>
             </button>
