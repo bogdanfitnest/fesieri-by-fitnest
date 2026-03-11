@@ -94,13 +94,13 @@ export default function AppShowcase() {
           {/* Mockup + Navigation Arrows Container */}
           <div className="relative w-full flex items-center justify-center mb-12">
             
-            {/* Prev Arrow - Refined positioning to avoid overlap */}
+            {/* Prev Arrow - High Visibility with Champagne border */}
             <button 
               onClick={prevSlide}
-              className="absolute left-0 md:left-4 lg:left-20 z-30 w-10 h-10 md:w-12 md:h-12 bg-slate-200/50 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-slate-300 transition-all text-slate-600 shadow-sm"
+              className="absolute left-0 md:left-4 lg:left-20 z-30 w-12 h-12 md:w-14 md:h-14 bg-white/80 backdrop-blur-md border-2 border-champagne rounded-full flex items-center justify-center hover:bg-champagne hover:text-obsidian transition-all text-champagne shadow-lg group"
               aria-label="Previous Slide"
             >
-              <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" /></svg>
+              <svg className="w-6 h-6 md:w-8 md:h-8 group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M15 19l-7-7 7-7" /></svg>
             </button>
 
             {/* Premium iPhone Mockup - Resized to match example */}
@@ -130,13 +130,13 @@ export default function AppShowcase() {
               </div>
             </div>
 
-            {/* Next Arrow - Refined positioning to avoid overlap */}
+            {/* Next Arrow - High Visibility with Champagne border */}
             <button 
               onClick={nextSlide}
-              className="absolute right-0 md:right-4 lg:right-20 z-30 w-10 h-10 md:w-12 md:h-12 bg-slate-200/50 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-slate-300 transition-all text-slate-600 shadow-sm"
+              className="absolute right-0 md:right-4 lg:right-20 z-30 w-12 h-12 md:w-14 md:h-14 bg-white/80 backdrop-blur-md border-2 border-champagne rounded-full flex items-center justify-center hover:bg-champagne hover:text-obsidian transition-all text-champagne shadow-lg group"
               aria-label="Next Slide"
             >
-              <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" /></svg>
+              <svg className="w-6 h-6 md:w-8 md:h-8 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" /></svg>
             </button>
           </div>
 

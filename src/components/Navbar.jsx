@@ -23,10 +23,17 @@ export default function Navbar() {
             : "bg-[#252528]/20 backdrop-blur-sm md:backdrop-blur-md"
         )}
       >
-        <div className="flex items-center gap-1 font-sans italic font-black text-lg md:text-2xl tracking-tighter shrink-0">
+        <a 
+          href="#top" 
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          className="flex items-center gap-1 font-sans italic font-black text-lg md:text-2xl tracking-tighter shrink-0 hover:opacity-80 transition-opacity cursor-pointer group"
+        >
           <span className="text-white">FESIERI</span>
           <span className="text-champagne">BY FITNEST</span>
-        </div>
+        </a>
 
         <ul className="hidden md:flex items-center gap-10 font-sans font-semibold tracking-widest text-xs">
           {['APLICAȚIE', 'REZULTATE', 'PROGRAME'].map((item) => (
