@@ -94,18 +94,18 @@ export default function AppShowcase() {
           {/* Mockup + Navigation Arrows Container */}
           <div className="relative w-full flex items-center justify-center mb-12">
             
-            {/* Prev Arrow - Always Visible */}
+            {/* Prev Arrow - Refined positioning to avoid overlap */}
             <button 
               onClick={prevSlide}
-              className="absolute left-0 md:left-10 lg:left-32 z-30 p-4 md:p-6 bg-white rounded-full shadow-xl hover:scale-110 active:scale-95 transition-all text-obsidian group"
+              className="absolute left-0 md:left-4 lg:left-20 z-30 w-10 h-10 md:w-12 md:h-12 bg-slate-200/50 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-slate-300 transition-all text-slate-600 shadow-sm"
               aria-label="Previous Slide"
             >
-              <svg className="w-6 h-6 md:w-8 md:h-8 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M15 19l-7-7 7-7" /></svg>
+              <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" /></svg>
             </button>
 
-            {/* Premium iPhone Mockup - The Centerpiece */}
-            <div className="relative w-[280px] md:w-[340px] h-[580px] md:h-[700px] bg-[#0a0a0b] rounded-[3.5rem] md:rounded-[4rem] p-3 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.3)] ring-1 ring-black/10 z-20 overflow-hidden">
-              <div className="relative w-full h-full rounded-[2.9rem] md:rounded-[3.4rem] overflow-hidden bg-black">
+            {/* Premium iPhone Mockup - Resized to match example */}
+            <div className="relative w-[220px] md:w-[260px] h-[450px] md:h-[530px] bg-[#0a0a0b] rounded-[2.5rem] md:rounded-[3rem] p-2.5 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.2)] ring-1 ring-black/5 z-20 overflow-hidden">
+              <div className="relative w-full h-full rounded-[2.1rem] md:rounded-[2.6rem] overflow-hidden bg-black">
                 {features.map((feature, idx) => (
                   <div
                     key={feature.id}
@@ -130,13 +130,13 @@ export default function AppShowcase() {
               </div>
             </div>
 
-            {/* Next Arrow - Always Visible */}
+            {/* Next Arrow - Refined positioning to avoid overlap */}
             <button 
               onClick={nextSlide}
-              className="absolute right-0 md:right-10 lg:right-32 z-30 p-4 md:p-6 bg-white rounded-full shadow-xl hover:scale-110 active:scale-95 transition-all text-obsidian group"
+              className="absolute right-0 md:right-4 lg:right-20 z-30 w-10 h-10 md:w-12 md:h-12 bg-slate-200/50 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-slate-300 transition-all text-slate-600 shadow-sm"
               aria-label="Next Slide"
             >
-              <svg className="w-6 h-6 md:w-8 md:h-8 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" /></svg>
+              <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" /></svg>
             </button>
           </div>
 

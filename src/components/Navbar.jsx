@@ -19,8 +19,8 @@ export default function Navbar() {
         className={cn(
           "flex items-center justify-between px-4 md:px-8 py-2 md:py-3 transition-all duration-500 rounded-full w-full max-w-5xl",
           scrolled
-            ? "bg-obsidian/90 backdrop-blur-xl border border-white/10 shadow-2xl"
-            : "bg-[#252528]/40 backdrop-blur-sm md:backdrop-blur-md"
+            ? "bg-obsidian/70 backdrop-blur-xl border border-white/10 shadow-2xl"
+            : "bg-[#252528]/20 backdrop-blur-sm md:backdrop-blur-md"
         )}
       >
         <div className="flex items-center gap-1 font-sans italic font-black text-lg md:text-2xl tracking-tighter shrink-0">
