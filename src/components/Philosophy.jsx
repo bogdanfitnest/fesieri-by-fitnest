@@ -58,18 +58,18 @@ export default function AppShowcase() {
         <div className="relative z-10 w-full h-full grid grid-rows-[auto_1fr_auto] py-4 md:py-16 text-center overflow-hidden">
 
           {/* 1. Header Area */}
-          <div className="px-6 flex flex-col items-center flex-shrink-0 z-20 pt-2 md:pt-0">
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-sans font-black italic tracking-tighter mb-0.5 leading-tight uppercase">
+          <div className="px-6 flex flex-col items-center flex-shrink-0 z-30 pt-4 md:pt-0">
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-sans font-black italic tracking-tighter mb-1 leading-tight uppercase">
               Aplicația <span className="text-champagne drop-shadow-sm">Fitnest.</span>
             </h2>
-            <p className="text-lg md:text-3xl text-slate-500 font-drama italic tracking-tight">
+            <p className="text-base md:text-3xl text-slate-500 font-drama italic tracking-tight">
               14+ ani de experiență într-un singur loc.
             </p>
           </div>
 
           {/* 2. Visual Area (Carousel) - Contained in the middle grid row */}
-          <div className="relative w-full h-full flex items-center justify-center overflow-visible px-4 z-10">
-            <div className="relative w-full h-full max-h-[500px] md:max-h-[550px] flex items-center justify-center">
+          <div className="relative w-full h-full flex items-center justify-center overflow-visible px-4 z-10 py-4 md:py-0">
+            <div className="relative w-full h-full max-h-[400px] md:max-h-[550px] flex items-center justify-center">
 
               {features.map((feature, idx) => {
                 let relativeIdx = idx - activeIndex;
@@ -95,7 +95,7 @@ export default function AppShowcase() {
                     )}
                   >
                     {/* futuristic iPhone Mockup - High Impact Scale */}
-                    <div className="relative w-[250px] md:w-[280px] h-[500px] md:h-[580px] bg-gradient-to-br from-[#1a1a1c] to-[#0a0a0b] rounded-[3rem] p-[2px] shadow-[0_40px_80px_-20px_rgba(0,0,0,0.8)] ring-1 ring-white/20 group/phone">
+                    <div className="relative w-[190px] md:w-[280px] h-[380px] md:h-[580px] bg-gradient-to-br from-[#1a1a1c] to-[#0a0a0b] rounded-[2.2rem] md:rounded-[3rem] p-[2px] shadow-[0_40px_80px_-20px_rgba(0,0,0,0.8)] ring-1 ring-white/20 group/phone">
 
                       {/* Zero-Bezel Screen */}
                       <div className="relative w-full h-full rounded-[2.9rem] overflow-hidden bg-black">
@@ -128,7 +128,7 @@ export default function AppShowcase() {
           <div className="px-5 flex flex-col items-center flex-shrink-0 z-20 pb-2 md:pb-0">
 
             {/* Dynamic Feature Meta Container (Safe height) */}
-            <div className="w-full max-w-4xl relative h-[70px] md:h-[130px] flex items-center justify-center mb-4 md:mb-6">
+            <div className="w-full max-w-4xl relative h-[90px] md:h-[130px] flex items-center justify-center mb-4 md:mb-6 mt-4 md:mt-0">
               {features.map((feature, idx) => (
                 <div
                   key={feature.id}
@@ -137,8 +137,8 @@ export default function AppShowcase() {
                     activeIndex === idx ? "opacity-100 translate-y-0 relative scale-100" : "opacity-0 translate-y-4 pointer-events-none scale-95"
                   )}
                 >
-                  <h3 className="text-xl md:text-5xl font-black italic font-sans mb-0.5 text-obsidian tracking-tighter uppercase leading-none">{feature.title}</h3>
-                  <p className="text-[10px] md:text-lg lg:text-xl text-slate-500 font-medium leading-tight max-w-2xl mx-auto px-4 line-clamp-2 md:line-clamp-none">
+                  <h3 className="text-xl md:text-5xl font-black italic font-sans mb-1 text-obsidian tracking-tighter uppercase leading-none">{feature.title}</h3>
+                  <p className="text-xs md:text-lg lg:text-xl text-slate-500 font-medium leading-tight max-w-2xl mx-auto px-4 line-clamp-3 md:line-clamp-none">
                     {feature.desc}
                   </p>
                 </div>

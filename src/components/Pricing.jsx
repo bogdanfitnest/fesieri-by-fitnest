@@ -92,8 +92,8 @@ export default function Pricing() {
   ];
 
   return (
-    <section id="programe" className="w-full py-32 bg-ivory text-obsidian px-6 overflow-hidden">
-      <div className="max-w-6xl mx-auto">
+    <section id="programe" className="relative w-full py-32 bg-ivory text-obsidian px-6 overflow-hidden z-20">
+      <div className="max-w-7xl mx-auto">
         
         {/* Header Section with Timer */}
         <div className="flex flex-col md:flex-row justify-between items-center md:items-end gap-10 mb-20">

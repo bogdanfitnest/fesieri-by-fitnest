@@ -40,7 +40,7 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative flex flex-col w-full min-h-[100dvh] overflow-hidden bg-obsidian"
+      className="relative flex flex-col items-center justify-center w-full min-h-[100dvh] overflow-hidden bg-obsidian"
     >
       {/* Background Image Wrapper */}
       <div className="absolute inset-0 z-0 w-full h-[120%] -top-[10%] hero-bg">
@@ -54,7 +54,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/70 to-transparent" />
       </div>
 
-      <div className="relative z-10 w-full px-6 pb-24 md:pb-32 pt-44 md:pt-32 max-w-7xl mx-auto flex flex-col items-center">
+      <div className="relative z-10 w-full px-6 pb-20 md:pb-0 pt-32 md:pt-0 max-w-7xl mx-auto flex flex-col items-center justify-center min-h-[100dvh]">
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center w-full">
 
@@ -105,7 +105,7 @@ export default function Hero() {
               </span>
             </h1>
 
-            <p className="hero-reveal max-w-lg mb-12 text-lg font-light leading-relaxed text-ivory/80 md:text-xl font-sans text-center lg:text-left mx-auto lg:mx-0">
+            <p className="hero-reveal max-w-lg mb-8 md:mb-12 text-lg font-light leading-relaxed text-ivory/80 md:text-xl font-sans text-center lg:text-left mx-auto lg:mx-0">
               Fesieri by Fitnest. Un program de hipertrofie premium conceput pentru o remodelarea și mărirea fesierilor. Nu promitem scurtături, livrăm rezultate reale.
             </p>
 

@@ -114,7 +114,7 @@ export default function Protocol() {
   ];
 
   return (
-    <section ref={containerRef} id="rezultate" className="relative w-full bg-[#0d0d12] pb-32">
+    <section ref={containerRef} id="rezultate" className="relative w-full bg-[#0d0d12] pb-32 z-10">
       {protocols.map((protocol, index) => (
         <div 
           key={index}
@@ -124,7 +124,7 @@ export default function Protocol() {
           )}
           style={{ zIndex: index }}
         >
-          <div className="w-full max-w-6xl h-full max-h-[700px] flex flex-col md:flex-row bg-[#15151A] rounded-[3rem] border border-white/10 overflow-hidden shadow-2xl relative">
+          <div className="w-full max-w-7xl h-full max-h-[700px] flex flex-col md:flex-row bg-[#15151A] rounded-[3rem] border border-white/10 overflow-hidden shadow-2xl relative">
             
             {/* Visual Canvas Half */}
             <div className="w-full md:w-1/2 h-1/2 md:h-full border-b md:border-b-0 md:border-r border-white/5 bg-[#0f1013] flex items-center justify-center p-8 relative overflow-hidden">
