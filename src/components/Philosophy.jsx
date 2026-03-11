@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { cn } from '../utils';
 
 const features = [
@@ -36,6 +36,10 @@ const features = [
 
 export default function AppShowcase() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const touchStart = useRef(null);
+  const touchEnd = useRef(null);
+
+  const minSwipeDistance = 50;
 
   const nextSlide = () => {
     setActiveIndex((prev) => (prev === features.length - 1 ? 0 : prev + 1));
@@ -45,29 +49,63 @@ export default function AppShowcase() {
     setActiveIndex((prev) => (prev === 0 ? features.length - 1 : prev - 1));
   };
 
+  const onTouchStart = (e) => {
+    touchEnd.current = null;
+    touchStart.current = e.targetTouches[0].clientX;
+  };
+
+  const onTouchMove = (e) => {
+    touchEnd.current = e.targetTouches[0].clientX;
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart.current || !touchEnd.current) return;
+    const distance = touchStart.current - touchEnd.current;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    if (isLeftSwipe) {
+      nextSlide();
+    } else if (isRightSwipe) {
+      prevSlide();
+    }
+  };
+
   return (
-    <section id="aplicatie" className="relative w-full py-20 md:py-32 bg-[#F1F3F5] text-obsidian overflow-hidden">
+    <section id="aplicatie" className="relative w-full py-24 md:py-32 bg-[#f8f9fa] text-obsidian overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         
-        {/* Isolated Header */}
-        <div className="text-center mb-16 md:mb-24">
-          <h2 className="text-4xl md:text-7xl font-sans font-black italic tracking-tighter uppercase leading-tight">
+        {/* 1. Header Area - Fixed Mobile Height */}
+        <div className="text-center mb-12 md:mb-20">
+          <h2 className="text-4xl md:text-7xl font-sans font-black italic tracking-tighter uppercase leading-[0.9] mb-4">
             Aplicația <span className="text-slate-400">Fitnest.</span>
           </h2>
-          <p className="mt-4 text-lg md:text-3xl text-slate-500 font-drama italic tracking-tight">
+          <p className="text-lg md:text-3xl text-slate-500 font-drama italic tracking-tight">
             14+ ani de experiență într-un singur loc.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          
-          {/* Visual Showcase - Stabilized */}
-          <div className="order-2 lg:order-1 flex justify-center items-center relative">
-            {/* Background Decorative Element */}
-            <div className="absolute inset-0 bg-white/40 blur-3xl rounded-full scale-75 pointer-events-none" />
+        {/* 2. Main Carousel Component */}
+        <div 
+          className="relative flex flex-col items-center"
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
+        >
+          {/* Mockup + Navigation Arrows Container */}
+          <div className="relative w-full flex items-center justify-center mb-12">
             
-            <div className="relative w-[280px] md:w-[320px] h-[580px] md:h-[650px] bg-[#0a0a0b] rounded-[3.5rem] p-3 shadow-2xl ring-1 ring-black/10 overflow-hidden z-10 transition-transform duration-500 hover:scale-[1.02]">
-              <div className="relative w-full h-full rounded-[2.9rem] overflow-hidden bg-black">
+            {/* Prev Arrow - Always Visible */}
+            <button 
+              onClick={prevSlide}
+              className="absolute left-0 md:left-10 lg:left-32 z-30 p-4 md:p-6 bg-white rounded-full shadow-xl hover:scale-110 active:scale-95 transition-all text-obsidian group"
+              aria-label="Previous Slide"
+            >
+              <svg className="w-6 h-6 md:w-8 md:h-8 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M15 19l-7-7 7-7" /></svg>
+            </button>
+
+            {/* Premium iPhone Mockup - The Centerpiece */}
+            <div className="relative w-[280px] md:w-[340px] h-[580px] md:h-[700px] bg-[#0a0a0b] rounded-[3.5rem] md:rounded-[4rem] p-3 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.3)] ring-1 ring-black/10 z-20 overflow-hidden">
+              <div className="relative w-full h-full rounded-[2.9rem] md:rounded-[3.4rem] overflow-hidden bg-black">
                 {features.map((feature, idx) => (
                   <div
                     key={feature.id}
@@ -79,61 +117,65 @@ export default function AppShowcase() {
                     <video
                       src={feature.videoUrl}
                       className="w-full h-full object-cover"
-                      autoPlay
+                      autoPlay={activeIndex === idx}
                       loop
                       muted
                       playsInline
-                      key={`${feature.id}-${activeIndex === idx}`}
+                      key={`video-${feature.id}-${activeIndex === idx}`}
                     />
+                    {/* Inner Shadow for Realism */}
+                    <div className="absolute inset-0 shadow-[inset_0_0_60px_rgba(0,0,0,0.3)] pointer-events-none" />
                   </div>
                 ))}
               </div>
             </div>
-            
-            {/* Carousel navigation overlay for mobile-like feel */}
-            <div className="absolute -bottom-10 flex items-center gap-6 z-30 lg:hidden">
-               <button onClick={prevSlide} className="p-4 bg-white rounded-full shadow-lg hover:bg-slate-50 transition-colors">
-                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
-               </button>
-               <button onClick={nextSlide} className="p-4 bg-white rounded-full shadow-lg hover:bg-slate-50 transition-colors">
-                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-               </button>
-            </div>
+
+            {/* Next Arrow - Always Visible */}
+            <button 
+              onClick={nextSlide}
+              className="absolute right-0 md:right-10 lg:right-32 z-30 p-4 md:p-6 bg-white rounded-full shadow-xl hover:scale-110 active:scale-95 transition-all text-obsidian group"
+              aria-label="Next Slide"
+            >
+              <svg className="w-6 h-6 md:w-8 md:h-8 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" /></svg>
+            </button>
           </div>
 
-          {/* Content Area - Isolated & Stable */}
-          <div className="order-1 lg:order-2 flex flex-col justify-center text-center lg:text-left">
-            <div className="space-y-12">
+          {/* 3. Active Feature Text Area - Centered Below */}
+          <div className="w-full max-w-3xl text-center px-4">
+            <div className="relative h-40 md:h-48">
               {features.map((feature, idx) => (
-                <div 
+                <div
                   key={feature.id}
-                  onClick={() => setActiveIndex(idx)}
                   className={cn(
-                    "cursor-pointer transition-all duration-500 p-6 md:p-8 rounded-[2rem] border-2",
+                    "absolute inset-0 flex flex-col items-center justify-start transition-all duration-700 ease-out",
                     activeIndex === idx 
-                      ? "bg-white border-white shadow-xl scale-100" 
-                      : "bg-transparent border-transparent opacity-40 hover:opacity-60 scale-95"
+                      ? "opacity-100 translate-y-0 scale-100" 
+                      : "opacity-0 translate-y-10 scale-95 pointer-events-none"
                   )}
                 >
-                  <h3 className="text-2xl md:text-3xl font-black italic uppercase tracking-tighter mb-4">
+                  <h3 className="text-2xl md:text-5xl font-black italic uppercase tracking-tighter mb-4 text-obsidian">
                     {feature.title}
                   </h3>
-                  <p className="text-sm md:text-lg text-slate-500 font-medium leading-relaxed">
+                  <p className="text-sm md:text-xl text-slate-500 font-medium leading-relaxed max-w-2xl">
                     {feature.desc}
                   </p>
                 </div>
               ))}
             </div>
 
-            {/* Pagination helper for desktop */}
-            <div className="hidden lg:flex gap-3 mt-12 px-8">
+            {/* Pagination Bullets */}
+            <div className="flex justify-center items-center gap-3 mt-8">
               {features.map((_, i) => (
-                <div
+                <button
                   key={i}
+                  onClick={() => setActiveIndex(i)}
                   className={cn(
-                    "h-1.5 transition-all duration-300 rounded-full",
-                    activeIndex === i ? "w-12 bg-obsidian" : "w-4 bg-slate-300"
+                    "transition-all duration-500 rounded-full",
+                    activeIndex === i 
+                      ? "w-10 md:w-16 h-1.5 md:h-2 bg-obsidian" 
+                      : "w-2 md:w-3 h-1.5 md:h-2 bg-slate-200 hover:bg-slate-300"
                   )}
+                  aria-label={`Go to slide ${i + 1}`}
                 />
               ))}
             </div>
