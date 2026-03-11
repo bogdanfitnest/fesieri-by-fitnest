@@ -46,7 +46,7 @@ export default function AppShowcase() {
   };
 
   return (
-    <section id="aplicatie" className="w-full min-h-[100dvh] flex items-center justify-center bg-obsidian text-obsidian px-3 md:px-8 py-6 md:py-12">
+    <section id="aplicatie" className="relative z-30 w-full min-h-[100dvh] flex items-center justify-center bg-obsidian text-obsidian px-3 md:px-8 py-6 md:py-12">
       {/* Full-Page Card Overlay Wrapper */}
       <div className="w-full max-w-[1500px] h-[92dvh] md:h-[90dvh] bg-ivory rounded-[2.5rem] md:rounded-[4.5rem] overflow-hidden shadow-[0_60px_120px_-30px_rgba(0,0,0,0.6)] border border-white/20 relative">
 
@@ -69,7 +69,7 @@ export default function AppShowcase() {
 
           {/* 2. Visual Area (Carousel) - Contained in the middle grid row */}
           <div className="relative w-full h-full flex items-center justify-center overflow-visible px-4 z-10 py-4 md:py-0">
-            <div className="relative w-full h-full max-h-[400px] md:max-h-[550px] flex items-center justify-center">
+            <div className="relative w-full h-full max-h-[500px] md:max-h-[550px] flex items-center justify-center">
 
               {features.map((feature, idx) => {
                 let relativeIdx = idx - activeIndex;
@@ -95,7 +95,7 @@ export default function AppShowcase() {
                     )}
                   >
                     {/* futuristic iPhone Mockup - High Impact Scale */}
-                    <div className="relative w-[190px] md:w-[280px] h-[380px] md:h-[580px] bg-gradient-to-br from-[#1a1a1c] to-[#0a0a0b] rounded-[2.2rem] md:rounded-[3rem] p-[2px] shadow-[0_40px_80px_-20px_rgba(0,0,0,0.8)] ring-1 ring-white/20 group/phone">
+                    <div className="relative w-[250px] md:w-[280px] h-[500px] md:h-[580px] bg-gradient-to-br from-[#1a1a1c] to-[#0a0a0b] rounded-[3rem] p-[2px] shadow-[0_40px_80px_-20px_rgba(0,0,0,0.8)] ring-1 ring-white/20 group/phone">
 
                       {/* Zero-Bezel Screen */}
                       <div className="relative w-full h-full rounded-[2.9rem] overflow-hidden bg-black">
@@ -129,7 +129,7 @@ export default function AppShowcase() {
           <div className="px-5 flex flex-col items-center flex-shrink-0 z-40 pb-4 md:pb-8">
 
             {/* Dynamic Feature Meta Container (Safe height) */}
-            <div className="w-full max-w-4xl relative h-[90px] md:h-[130px] flex items-center justify-center mb-6 md:mb-8 mt-10 md:mt-12 z-40">
+            <div className="w-full max-w-4xl relative h-[70px] md:h-[130px] flex items-center justify-center mb-4 md:mb-6 mt-4 md:mt-0 z-40">
               {features.map((feature, idx) => (
                 <div
                   key={feature.id}

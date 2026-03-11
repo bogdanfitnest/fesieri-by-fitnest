@@ -243,7 +243,7 @@ export default function Features() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="program" className="w-full py-24 md:py-32 bg-ivory text-obsidian px-6">
+    <section ref={sectionRef} id="program" className="relative z-20 w-full py-24 md:py-32 bg-ivory text-obsidian px-6">
       <div className="max-w-7xl mx-auto">
         <div className="mb-20 feature-card">
           <h2 className="text-4xl md:text-5xl font-sans font-bold tracking-tight mb-4">
