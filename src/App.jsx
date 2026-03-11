@@ -13,6 +13,9 @@ import Footer from './components/Footer';
 
 gsap.registerPlugin(ScrollTrigger);
 
+// Universal Scroll Normalization for iOS/Android
+ScrollTrigger.normalizeScroll(true);
+
 function App() {
   // Global smooth scrolling reset or setup can go here
   useEffect(() => {

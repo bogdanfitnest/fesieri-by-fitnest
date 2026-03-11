@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { gsap } from 'gsap';
+import React, { useEffect, useState } from 'react';
 import { cn } from '../utils';
 
 export default function Navbar() {
@@ -7,7 +6,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 20);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -15,16 +14,16 @@ export default function Navbar() {
   }, []);
 
   return (
-    <div className="fixed top-6 left-0 right-0 z-[100] flex justify-center w-full px-4 text-sm font-medium">
+    <div className="fixed top-2 md:top-6 left-0 right-0 z-[100] flex justify-center w-full px-2 md:px-4 text-sm font-medium transition-all duration-300">
       <nav
         className={cn(
-          "flex items-center justify-between px-6 md:px-8 py-3 transition-all duration-500 rounded-full w-full max-w-5xl",
+          "flex items-center justify-between px-4 md:px-8 py-2 md:py-3 transition-all duration-500 rounded-full w-full max-w-5xl",
           scrolled
-            ? "bg-obsidian/85 backdrop-blur-xl border border-slate/40 shadow-2xl shadow-obsidian/50"
-            : "bg-[#252528]/80 backdrop-blur-md"
+            ? "bg-obsidian/90 backdrop-blur-xl border border-white/10 shadow-2xl"
+            : "bg-[#252528]/40 backdrop-blur-sm md:backdrop-blur-md"
         )}
       >
-        <div className="flex items-center gap-1 font-sans italic font-black text-xl md:text-2xl tracking-tighter">
+        <div className="flex items-center gap-1 font-sans italic font-black text-lg md:text-2xl tracking-tighter shrink-0">
           <span className="text-white">FESIERI</span>
           <span className="text-champagne">BY FITNEST</span>
         </div>
@@ -47,9 +46,9 @@ export default function Navbar() {
 
         <a 
           href="#programe"
-          className="relative px-6 py-2.5 overflow-hidden text-obsidian bg-champagne rounded-full group hover:scale-[1.03] transition-all duration-300 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]"
+          className="relative px-4 md:px-6 py-2 md:py-2.5 overflow-hidden text-obsidian bg-champagne rounded-full group hover:scale-[1.03] transition-all duration-300 ease-out"
         >
-          <span className="relative z-10 font-sans font-bold tracking-wider text-xs">ÎNSCRIE-TE</span>
+          <span className="relative z-10 font-sans font-bold tracking-wider text-[10px] md:text-xs">ÎNSCRIE-TE</span>
           <span className="absolute inset-0 z-0 bg-white translate-y-full transition-transform duration-300 ease-in-out group-hover:translate-y-0" />
         </a>
       </nav>

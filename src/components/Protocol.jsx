@@ -121,7 +121,7 @@ export default function Protocol() {
           key={index}
           ref={(el) => (cardsRef.current[index] = el)}
           className={cn(
-            "w-full h-[100dvh] flex items-center justify-center p-6 origin-top sticky top-0 bg-[#0d0d12] pt-28",
+            "w-full h-[100dvh] flex items-center justify-center p-4 md:p-6 origin-top sticky top-0 bg-[#0d0d12] pt-20 md:pt-28",
           )}
           style={{ zIndex: 10 + index }}
         >
