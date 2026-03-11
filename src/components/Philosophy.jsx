@@ -104,7 +104,7 @@ export default function AppShowcase() {
             </button>
 
             {/* Premium iPhone Mockup - Resized to match example */}
-            <div className="relative w-[220px] md:w-[260px] h-[450px] md:h-[530px] bg-[#0a0a0b] rounded-[2.5rem] md:rounded-[3rem] p-2.5 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.2)] ring-1 ring-black/5 z-20 overflow-hidden">
+            <div className="relative w-[240px] md:w-[280px] h-[480px] md:h-[570px] bg-[#0a0a0b] rounded-[2.5rem] md:rounded-[3rem] p-2.5 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.2)] ring-1 ring-black/5 z-20 overflow-hidden">
               <div className="relative w-full h-full rounded-[2.1rem] md:rounded-[2.6rem] overflow-hidden bg-black">
                 {features.map((feature, idx) => (
                   <div

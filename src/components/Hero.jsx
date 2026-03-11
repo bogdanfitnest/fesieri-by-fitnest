@@ -93,14 +93,14 @@ export default function Hero() {
 
           {/* Bottom/Right: Typography & Primary Action */}
           <div ref={textRef} className="flex flex-col order-2">
-            <h1 className="flex flex-col mb-8 text-ivory text-center lg:text-left">
-              <span className="hero-reveal text-4xl md:text-6xl lg:text-7xl xl:text-[7rem] font-sans font-black tracking-tighter uppercase text-white leading-[0.9] md:leading-[0.85]">
+            <h1 className="flex flex-col mb-8 text-ivory text-center lg:text-left z-20">
+              <span className="hero-reveal text-4xl md:text-6xl lg:text-7xl xl:text-[6.5rem] font-sans font-black tracking-tighter uppercase text-white leading-[0.9] md:leading-[0.85]">
                 Performanța
               </span>
-              <span className="hero-reveal text-4xl md:text-6xl lg:text-7xl xl:text-[7rem] font-sans font-black tracking-tighter uppercase text-white leading-[0.9] md:leading-[0.85] mt-1 md:-mt-4">
+              <span className="hero-reveal text-4xl md:text-6xl lg:text-7xl xl:text-[6.5rem] font-sans font-black tracking-tighter uppercase text-white leading-[0.9] md:leading-[0.85] mt-1 md:-mt-2">
                 Întâlnește
               </span>
-              <span className="hero-reveal text-6xl md:text-8xl lg:text-9xl xl:text-[10rem] leading-[0.9] md:leading-[0.85] font-drama italic text-champagne pr-4">
+              <span className="hero-reveal text-6xl md:text-8xl lg:text-9xl xl:text-[9rem] leading-[1.1] md:leading-[1] font-drama italic text-champagne pr-4 mt-2">
                 Precizia.
               </span>
             </h1>
