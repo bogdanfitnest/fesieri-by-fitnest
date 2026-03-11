@@ -20,7 +20,8 @@ export default function Protocol() {
             trigger: card,
             start: 'top top',
             end: 'bottom top',
-            scrub: 1,
+            scrub: true,
+            anticipatePin: 1,
             animation: gsap.to(card, {
                   scale: 0.95, // Softer scale down
                   opacity: 0.8, // Keeps text readable

@@ -29,7 +29,7 @@ export default function Hero() {
           trigger: containerRef.current,
           start: 'top top',
           end: 'bottom top',
-          scrub: 1,
+          scrub: true,
         }
       });
     }, containerRef);

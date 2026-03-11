@@ -15,7 +15,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <div className="fixed top-6 left-0 right-0 z-50 flex justify-center w-full px-4 text-sm font-medium">
+    <div className="fixed top-6 left-0 right-0 z-[100] flex justify-center w-full px-4 text-sm font-medium">
       <nav
         className={cn(
           "flex items-center justify-between px-6 md:px-8 py-3 transition-all duration-500 rounded-full w-full max-w-5xl",

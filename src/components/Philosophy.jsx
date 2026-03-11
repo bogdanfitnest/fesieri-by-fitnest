@@ -58,11 +58,11 @@ export default function AppShowcase() {
         <div className="relative z-10 w-full h-full grid grid-rows-[auto_1fr_auto] py-4 md:py-16 text-center overflow-hidden">
 
           {/* 1. Header Area */}
-          <div className="px-6 flex flex-col items-center flex-shrink-0 z-40 pt-4 md:pt-0">
+          <div className="px-6 flex flex-col items-center flex-shrink-0 z-40 pt-12 md:pt-0">
             <h2 className="text-4xl md:text-6xl lg:text-7xl font-sans font-black italic tracking-tighter mb-1 leading-tight uppercase">
               Aplicația <span className="text-champagne drop-shadow-sm">Fitnest.</span>
             </h2>
-            <p className="text-sm md:text-3xl text-slate-500 font-drama italic tracking-tight">
+            <p className="text-xs md:text-3xl text-slate-500 font-drama italic tracking-tight mb-2">
               14+ ani de experiență într-un singur loc.
             </p>
           </div>
